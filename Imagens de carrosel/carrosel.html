@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Carousel Example</title>
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+    /* Styling for the carousel container and images */
+    .carousel-container {
+      width: 400px;
+      display flex ;
+      align-items: center;
+      margin: 200px auto 0 ;
+      overflow: hidden;
+      position: relative;
+
+    }
+
+    .carousel-images {
+      display: flex;
+      transition: transform 0.4s ease;
+    }
+
+    .carousel-image {
+      flex: 0 0 400px;
+      height: 200px;
+      margin-right: 40px;
+    }
+    .carousel-image {
+      flex: 0 0 400px;
+      height: 200px;
+      margin-right: 10px;
+    }
+
+    /* Styling for the navigation buttons */
+    .carousel-button {
+      position: absolute;
+      top: 30%;
+      transform: translateY(-50%);
+      width: 30px;
+      height: 30px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .carousel-button.prev {
+      left: 10px;
+
+    }
+
+    .carousel-button.next {
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="carousel-container">
+    <div class="carousel-images" id="carouselImages">
+      <!-- Add your images here -->
+      <img class="carousel-image" src="principais-tendencias-em-desenvolvimento.png" alt="Image 1">
+      <img class="carousel-image" src="IDE-JAVA.png" alt="Image 2">
+      <img class="carousel-image" src="imagem-blog-PHP-01.jpg" alt="Image 3">
+      <img class="carousel-image" src="treinamento-sql.jpg" alt="Image 3">
+    </div>
+    <button class="btn btn-primary carousel-button prev" onclick="prevSlide()">&#8592;</button>
+    <button class="btn btn-primary carousel-button next" onclick="nextSlide()">&#8594;</button>
+  </div>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> 
+
+  <script>
+    // JavaScript for image carousel
+    const carouselImages = document.getElementById('carouselImages');
+    let currentPosition = 0;
+
+    function showSlide(position) {
+      const slideWidth = 400; // Width of each slide
+      currentPosition = position;
+      carouselImages.style.transform = `translateX(-${slideWidth * currentPosition}px)`;
+    }
+
+    function nextSlide() {
+      const totalSlides = carouselImages.children.length;
+      currentPosition = (currentPosition + 1) % totalSlides;
+      showSlide(currentPosition);
+    }
+
+    function prevSlide() {
+      const totalSlides = carouselImages.children.length;
+      currentPosition = (currentPosition - 1 + totalSlides) % totalSlides;
+      showSlide(currentPosition);
+    }
+
+    // Auto-rotate slides every 3 seconds (adjust as needed)
+    setInterval(nextSlide, 3000);
+  </script>
+</body>
+</html>

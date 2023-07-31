@@ -98,7 +98,7 @@
                         <div class="subheading mb-3">Bacharelado em Sistemas De Informação</div>
 
                     </div>
-                    <div class="flex-shrink-0"><span class="text-primary">Fevereiro 2019 -Conclusão Dezembro 2022</span></div>
+                    <div class="flex-shrink-0"><span class="text-primary">Concluido em 2022</span></div>
                 </div>
                 <div class="d-flex flex-column flex-md-row justify-content-between">
                     <div class="flex-grow-1">
@@ -126,12 +126,104 @@
         <section class="resume-section" id="interests">
             <div class="resume-section-content">
                 <h2 class="mb-5">Capacidades</h2>
-                <p>Sou um profissional apaixonado por tecnologia, com habilidades sólidas em desenvolvimento de software e um foco especial em Java, PHP e SQL.
-                    Em relação a Java, posso dizer que tenho uma vasta experiência na criação de aplicações robustas e escaláveis. Já participei de diversos projetos, desde o desenvolvimento de sistemas corporativos até aplicativos móveis. Minha familiaridade com frameworks como Spring e Hibernate me permite implementar soluções eficientes, garantindo um ótimo desempenho e uma manutenção mais fácil.
-                    No universo do PHP, também tenho uma trajetória repleta de desafios emocionantes. Trabalhei com desenvolvimento web, construindo sites dinâmicos e interativos. Tive a oportunidade de trabalhar em projetos de comércio eletrônico, onde pude aprimorar minhas habilidades em frameworks populares como Laravel e CodeIgniter. Além disso, sou adepto das boas práticas de segurança em PHP, protegendo aplicações contra possíveis vulnerabilidades.                   
-                    Quando se trata de SQL, minha experiência é indispensável. Tenho conhecimento avançado em bancos de dados relacionais e já fui responsável por projetar esquemas complexos para sistemas de larga escala. Minha capacidade de escrever consultas SQL otimizadas me ajudou a melhorar significativamente o desempenho e a eficiência de várias aplicações. Além disso, sou adepto das práticas de modelagem de banco de dados, garantindo a integridade dos dados e a facilidade de manutenção.          
-                    Ao longo da minha carreira, aprendi a importância da colaboração em equipe e da comunicação eficaz. Acredito que compartilhar conhecimento é fundamental para o crescimento coletivo, por isso, sempre me esforço para ajudar meus colegas a aprimorarem suas habilidades técnicas.
-                    Estou sempre em busca de novos desafios para continuar crescendo e me atualizando nas mais recentes tendências tecnológicas. Seja desenvolvendo projetos em Java, PHP ou SQL, estou entusiasmado para enfrentar novos desafios e contribuir para o sucesso de futuras empreitadas.
+                <p>Sou um profissional apaixonado por tecnologia, com habilidades sólidas em desenvolvimento de software e um foco especial em Java, PHP e SQL. Quando se trata de SQL, minha experiência é indispensável. Seja desenvolvendo projetos em Java, PHP ou SQL, estou entusiasmado para enfrentar novos desafios e contribuir para o sucesso de futuras empreitadas.
+<head>
+ 
+  <style>
+    /* Styling for the carousel container and images */
+    .carousel-container {
+      width: 400px;
+      display flex ;
+      align-items: center;
+      margin: 100px,80px,80px;
+      overflow: hidden;
+      position: relative;
+
+    }
+
+    .carousel-images {
+      display: flex;
+      transition: transform 0.4s ease;
+    }
+
+    .carousel-image {
+      flex: 0 0 400px;
+      height: 300px;
+      margin-right: 40px;
+    }
+    .carousel-image {
+      flex: 0 0 400px;
+      height: 200px;
+      margin-right: 10px;
+    }
+
+    /* Styling for the navigation buttons */
+    .carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 30px;
+      height: 30px;
+      background-color: #333;
+      border: none;
+      border-radius: 50%;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .carousel-button.prev {
+      left: 10px;
+
+    }
+
+    .carousel-button.next {
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="carousel-container">
+    <div class="carousel-images" id="carouselImages">
+      <!-- Add your images here -->
+      <img class="carousel-image" src="Imagens de carrosel/principais-tendencias-em-desenvolvimento.png" alt="Image 1">
+      <img class="carousel-image" src="Imagens de carrosel/IDE-JAVA.png" alt="Image 2">
+      <img class="carousel-image" src="Imagens de carrosel/imagem-blog-PHP-01.jpg" alt="Image 3">
+      <img class="carousel-image" src="Imagens de carrosel/treinamento-sql.jpg" alt="Image 3">
+    </div>
+
+  </div>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> 
+
+  <script>
+    // JavaScript for image carousel
+    const carouselImages = document.getElementById('carouselImages');
+    let currentPosition = 0;
+
+    function showSlide(position) {
+      const slideWidth = 400; // Width of each slide
+      currentPosition = position;
+      carouselImages.style.transform = `translateX(-${slideWidth * currentPosition}px)`;
+    }
+
+    function nextSlide() {
+      const totalSlides = carouselImages.children.length;
+      currentPosition = (currentPosition + 1) % totalSlides;
+      showSlide(currentPosition);
+    }
+
+    function prevSlide() {
+      const totalSlides = carouselImages.children.length;
+      currentPosition = (currentPosition - 1 + totalSlides) % totalSlides;
+      showSlide(currentPosition);
+    }
+
+    // Auto-rotate slides every 3 seconds (adjust as needed)
+    setInterval(nextSlide, 3000);
+  </script>
+</body>
             </div>
         </section>
         <hr class="m-0" />
